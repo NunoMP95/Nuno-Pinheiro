@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+---
+{#
+  Case study wrapper. The Markdown file supplies front matter:
+    heading, project, label, facts (list of {term, detail}), contents (list of {id, label})
+  and its body becomes {{ content }}.
+#}
+<article class="cs">
+  <a class="back" href="/#work"><span aria-hidden="true">←</span> Back to all work</a>
+  <header class="cs-hero">
+    <p class="label" style="margin:24px 0 0">{{ label }}</p>
+    <h1>{{ heading }}</h1>
+    <p class="sub">{{ project }}</p>
+    <dl class="cs-facts">
+      {% for fact in facts %}<div><dt>{{ fact.term }}</dt><dd>{{ fact.detail }}</dd></div>{% endfor %}
+    </dl>
+    {% if nda %}<p class="cs-note">{{ nda }}</p>{% endif %}
+    {% if contents %}
+    <nav aria-label="On this page"><ul class="cs-toc">
+      {% for item in contents %}<li><a href="#{{ item.id }}">{{ item.label }}</a></li>{% endfor %}
+    </ul></nav>
+    {% endif %}
+  </header>
+
+  {{ content | safe }}
+
+  <div class="cs-next">
+    <div><p class="label">Next</p><p>Want the full story? I'm happy to walk through it.</p></div>
+    <a class="btn btn-accent" href="#contact">Get in touch</a>
+  </div>
+</article>

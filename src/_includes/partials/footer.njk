@@ -1,0 +1,14 @@
+{# Contact footer. Details come from _data/site.json. #}
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <h2>Let's build something people use. <a href="mailto:{{ site.email }}">Say hello</a></h2>
+    <div class="contact">
+      <p class="label">Contact</p>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a href="{{ site.linkedin }}">LinkedIn</a>
+      <a href="{{ site.cvFile }}">Download CV <span class="sr-only">(PDF)</span></a>
+      <span>{{ site.locations }}</span>
+    </div>
+  </div>
+</footer>
+<div class="legal"><div class="wrap"><span>© <span class="year">{% year %}</span> {{ site.name }}</span><span>Built with Eleventy, HTML, CSS and JavaScript</span></div></div>

@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Lead UX Designer",
+    "period": "2025 to present",
+    "organisation": "Capita",
+    "summary": "Leading UX on an operational planning service for a public sector client.",
+    "highlights": [
+      "Tracked tickets and metrics through UAT, pilot and dual running",
+      "Ran adoption workshops that surfaced bugs and improvements",
+      "Wrote 5 support materials"
+    ],
+    "todo": "Add: what leading involved, e.g. mentoring or process"
+  },
+  {
+    "title": "UX and Digital Designer",
+    "period": "Dec 2021 to 2025",
+    "organisation": "Capita",
+    "summary": "The only UX designer at first, with BAs, a service designer and developers.",
+    "highlights": [
+      "Process-mapping workshops and service blueprints",
+      "Built a 50+ component UI kit",
+      "Audited the service against WCAG"
+    ]
+  }
+]

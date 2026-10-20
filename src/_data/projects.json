@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Scheduling Optimisation Engine",
+    "label": "Case study · 2021 to present",
+    "summary": "From 12 months of spreadsheets and email to a service that generates a deconflicted schedule across 21 sites.",
+    "url": "/case-studies/scheduling-optimisation-engine/",
+    "featured": true
+  },
+  {
+    "title": "Client-aligned UI kit",
+    "label": "Design system",
+    "summary": "50+ components with interactions mapped. Designers only change the text."
+  },
+  {
+    "title": "Change Request flow",
+    "label": "Interaction design",
+    "summary": "Editing part of a live schedule while every resource stays deconflicted."
+  },
+  {
+    "title": "WCAG audit",
+    "label": "Accessibility",
+    "summary": "Contrast, form labels and colours hard to perceive for users with dyslexia."
+  },
+  {
+    "title": "Training and guides",
+    "label": "Adoption",
+    "summary": "Workshops, 4 guides and a video demo. 96 tickets tracked in dual running."
+  },
+  {
+    "title": "Budgeting app",
+    "label": "Side project",
+    "todo": "Add: problem, users and stage."
+  }
+]

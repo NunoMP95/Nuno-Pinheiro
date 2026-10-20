@@ -1,0 +1,78 @@
+---
+layout: layouts/base.njk
+title: Nuno Pinheiro · Lead UX Designer, UK public sector
+---
+{#
+  Home page. Content comes from _data/*.json:
+  projects.json, stats.json, experience.json, skills.json, education.json.
+  Edit those files to change what appears here — no HTML needed.
+#}
+
+<!-- ===== HERO ===== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <p class="status label">{{ site.availability }}</p>
+    <h1 id="hero-title">Turning <em>complex services</em> into simple journeys.</h1>
+    <p class="lead">I'm Nuno, a Lead UX Designer with 5 years in the UK public sector. I design accessible, standards-led services, from research and blueprints to launch and adoption.</p>
+    <div class="btns">
+      {%- set featured = projects | selectattr("featured") | first %}
+      <a class="btn btn-accent" href="{{ featured.url }}">View case study</a>
+      <a class="btn btn-ghost" href="{{ site.cvFile }}">Download CV <span class="sr-only">(PDF)</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KEY NUMBERS ===== -->
+<div class="wrap">
+  <ul class="stats" aria-label="Key numbers">
+    {% for stat in stats %}{% include "partials/stat.njk" %}{% endfor %}
+  </ul>
+</div>
+
+<!-- Sections below can be reordered or hidden in config.js → sections -->
+<div id="sections">
+
+  <!-- ===== WORK ===== -->
+  <section class="section" id="work" data-title="Work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="head reveal"><div><p class="label">Selected work</p><h2 id="work-title">Projects</h2></div><p class="note">Client work is under NDA</p></div>
+      <ul class="grid">
+        {% for project in projects %}{% include "partials/project-card.njk" %}{% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section" id="experience" data-title="Experience" aria-labelledby="exp-title">
+    <div class="wrap">
+      <div class="head reveal"><div><p class="label">Experience</p><h2 id="exp-title">Where I've worked</h2></div></div>
+      <div class="exp">
+        {% for role in experience %}
+        <article class="role reveal">
+          <p class="label when">{{ role.period }} · {{ role.organisation }}</p>
+          <h3>{{ role.title }}</h3>
+          <p>{{ role.summary }}</p>
+          <ul>
+            {% for highlight in role.highlights %}<li>{{ highlight }}</li>{% endfor %}
+            {% if role.todo %}<li><span class="todo">{{ role.todo }}</span></li>{% endif %}
+          </ul>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS & EDUCATION ===== -->
+  <section class="section" id="skills" data-title="Skills" aria-labelledby="skills-title">
+    <div class="wrap">
+      <div class="head reveal"><div><p class="label">Skills</p><h2 id="skills-title">What I bring</h2></div></div>
+      <ul class="skills reveal">
+        {% for skill in skills %}<li>{{ skill }}</li>{% endfor %}
+      </ul>
+      <div class="edu reveal">
+        {% for item in education %}<div><h3>{{ item.qualification }}</h3><p>{{ item.institution }} · {{ item.year }}</p></div>{% endfor %}
+      </div>
+    </div>
+  </section>
+
+</div>

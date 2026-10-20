@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/case-study.njk",
+  "permalink": "/case-studies/{{ page.fileSlug }}/",
+  "nda": "This project is under NDA. I've left out the client's name, real data and real screens. Diagrams are simplified recreations of how I worked, not the product itself."
+}

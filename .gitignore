@@ -1,0 +1,8 @@
+# Installed packages (recreated by `npm install`)
+node_modules/
+
+# Built site (recreated by `npm run build`; GitHub builds its own copy)
+_site/
+
+# macOS
+.DS_Store

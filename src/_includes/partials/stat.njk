@@ -1,0 +1,11 @@
+{#
+  One key number. Expects `stat` = { value, suffix, caption } from _data/stats.json.
+  Screen readers get the real number (sr-only); the visible copy can count up.
+#}
+<li class="stat">
+  <span class="num">
+    <span class="sr-only">{{ stat.value }}{{ stat.suffix }}</span>
+    <span aria-hidden="true"><span data-count="{{ stat.value }}">{{ stat.value }}</span>{% if stat.suffix %}<b>{{ stat.suffix }}</b>{% endif %}</span>
+  </span>
+  <span class="cap">{{ stat.caption }}</span>
+</li>

@@ -1,0 +1,21 @@
+{# Site header + phone menu. Links come from _data/navigation.json. #}
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="/"{% if page.url == "/" %} aria-current="page"{% endif %}><i aria-hidden="true">{{ site.initials }}</i>{{ site.name }}</a>
+    <nav class="links" aria-label="Main">
+      {%- for item in navigation %}<a href="/#{{ item.section }}">{{ item.label }}</a>{% endfor -%}
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme">
+        {% include "partials/icon-sun.njk" %}
+        {% include "partials/icon-moon.njk" %}
+      </button>
+      <a class="cta" href="#contact">Get in touch</a>
+      <button class="icon-btn burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="menu" id="menu" aria-label="Mobile">
+    {%- for item in navigation %}<a href="/#{{ item.section }}">{{ item.label }} <span aria-hidden="true">→</span></a>{% endfor -%}
+    <a href="#contact">Contact <span aria-hidden="true">→</span></a>
+  </nav>
+</header>

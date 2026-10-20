@@ -1,0 +1,18 @@
+{#
+  One project card. Expects `project` from _data/projects.json:
+  { title, label, summary?, todo?, url?, featured? }
+  - With `url`, the whole card is clickable (link on the title, stretched over the card).
+  - `featured` makes it the large card with the blueprint visual.
+#}
+<li class="card{% if project.featured %} big{% endif %} reveal">
+  <p class="label">{{ project.label }}</p>
+  <h3>{% if project.url %}<a class="stretch" href="{{ project.url }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}</h3>
+  <p>{{ project.summary }}{% if project.todo %}<span class="todo">{{ project.todo }}</span>{% endif %}</p>
+  {% if project.featured %}
+  <figure class="visual">
+    {% include "partials/blueprint-lanes.njk" %}
+    <figcaption class="sr-only">Simplified service blueprint with four lanes: user, frontstage, backstage and support.</figcaption>
+  </figure>
+  {% endif %}
+  {% if project.url %}<span class="go" aria-hidden="true">Read the case study</span>{% endif %}
+</li>
