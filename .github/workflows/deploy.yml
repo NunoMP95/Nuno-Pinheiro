@@ -25,10 +25,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      # Switch to `npm ci` once package-lock.json is committed (it's faster and exact).
-      - run: npm install
+      # package-lock.json is committed, so install the exact same versions.
+      - run: npm ci
       - run: npm test
+      # Finds the sub-folder GitHub serves the site from:
+      # "/Nuno-Pinheiro" for a project site, "" for a username.github.io site.
+      - id: pages
+        uses: actions/configure-pages@v5
       - run: npm run build
+        env:
+          ELEVENTY_PATH_PREFIX: ${{ steps.pages.outputs.base_path }}/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

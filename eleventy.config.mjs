@@ -58,6 +58,10 @@ export default function (eleventyConfig) {
 
   return {
     dir: { input: "src", includes: "_includes", data: "_data", output: "_site" },
+    // Sub-folder the site is served from. GitHub's workflow sets ELEVENTY_PATH_PREFIX
+    // (e.g. "/Nuno-Pinheiro/" for a project site); locally it's "/" so `npm start` works.
+    // HtmlBasePlugin (above) then prefixes every root link like "/styles.css".
+    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || "/",
     // Let Markdown files use Nunjucks tags (shortcodes and includes).
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
